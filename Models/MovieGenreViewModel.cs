@@ -9,4 +9,7 @@ public class MovieGenreViewModel
     public SelectList? Genres { get; set; }
     public string? MovieGenre { get; set; }
     public string? SearchString { get; set; }
+
+    //NEW: Release Year-only Search
+    public int? ReleaseYear {get; set;}
 }

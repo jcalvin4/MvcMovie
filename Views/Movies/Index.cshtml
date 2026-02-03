@@ -16,6 +16,15 @@
             <option value="">All</option>
         </select>
 
+        <label>Year: 
+        <input type="number"
+               asp-for="ReleaseYear"
+               min="1900"
+               max="2100"
+               placeholder="e.g. 1999" />
+
+        <input type="submit" value="Filter" /></label>
+
         <label>Title: <input type="text" name="SearchString" /></label>
         <input type="submit" value="Filter" />
     </p>
@@ -24,22 +33,22 @@
 <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Movies![0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
+                @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre)
+                @Html.DisplayNameFor(model => model.Movies![0].Genre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Movies![0].Price)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Movies!) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
